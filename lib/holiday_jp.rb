@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+require "holiday_jp/version"
 require 'holiday_jp/holiday'
 require 'holiday_jp/holidays'
 

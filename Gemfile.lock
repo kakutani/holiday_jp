@@ -1,3 +1,8 @@
+PATH
+  remote: .
+  specs:
+    holiday_jp (0.2.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -13,6 +18,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  holiday_jp!
   jeweler
   rake
   shoulda

@@ -1,22 +1,6 @@
 require 'rubygems'
 require 'rake'
-
-begin
-  require 'jeweler'
-  Jeweler::Tasks.new do |gem|
-    gem.name = "holiday_jp"
-    gem.summary = %Q{Japanese Holidays.}
-    gem.description = %Q{Japanese Holidays from 1970 to 2050.}
-    gem.email = "komagata@gmail.com"
-    gem.homepage = "http://github.com/komagata/holiday_jp"
-    gem.authors = ["Masaki KOMAGATA"]
-    gem.add_development_dependency "shoulda", ">= 2.11.3"
-    # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
-  end
-  Jeweler::GemcutterTasks.new
-rescue LoadError
-  puts "Jeweler (or a dependency) not available. Install it with: sudo gem install jeweler"
-end
+require "bundler/gem_tasks"
 
 require 'rake/testtask'
 Rake::TestTask.new(:test) do |test|
@@ -38,12 +22,10 @@ rescue LoadError
   end
 end
 
-task :test => :check_dependencies
-
 task :default => :test
 
-require 'rake/rdoctask'
-Rake::RDocTask.new do |rdoc|
+require 'rdoc/task'
+RDoc::Task.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
 
   rdoc.rdoc_dir = 'rdoc'
